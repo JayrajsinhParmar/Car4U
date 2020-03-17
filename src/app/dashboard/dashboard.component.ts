@@ -6,28 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-  sidemenu =[
-    {
-      'name' :'Your Profile',
-      'icon':'account_circle',
-      'routerlink':'somethinbg'
-    },
-    {
-      'name' :'View Cars',
-      'icon':'account_circle',
-      'routerlink':''
-    },
-    {
-      'name' :'menu3',
-      'icon':'account_circle',
-      'routerlink':''
-    },
-    {
-      'name' :'menu4',
-      'icon':'account_circle',
-      'routerlink':''
-    },
-  ]
+  
   constructor() { }
 
   

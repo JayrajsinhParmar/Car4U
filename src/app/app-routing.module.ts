@@ -2,12 +2,13 @@ import { UserRegisterComponent } from './UserRegister/user-register/user-registe
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 
 const routes: Routes = [
   {
     path:'',
-    component :DashboardComponent,
+    component :SidebarComponent,
     pathMatch:'full'
   },
   {
