@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "Car4U"
+  "defaultProject": "Car4U",
+  "cli": {
+    "analytics": "2e5cfbb0-2271-471a-a153-b8ef5221273c"
+  }
 }

@@ -1,0 +1,83 @@
+<mat-toolbar color="accent">
+    <span class="demo-toolbar"></span>
+
+
+</mat-toolbar>
+
+<mat-card>
+    <!-- Title of an Card -->
+    <mat-card-title>
+        User Registration
+    </mat-card-title>
+
+    <mat-card-content>
+        <form #userForm="ngForm" (ngSubmit)="onFormSubmit(userForm)">
+            <table>
+                <tr>
+                    <td>
+                        <mat-form-field class=" example-full-width">
+                            <mat-label>Name</mat-label>
+                            <input matInput [formControl]="userName" placeholder="Ex. girish">
+
+                            <mat-error *ngIf="userName.hasError('required')">
+                                Name is <strong>required</strong>
+                            </mat-error>
+                        </mat-form-field>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Email</mat-label>
+                            <input matInput [formControl]="emailFormControl" placeholder="Ex. pat@example.com">
+                            <mat-error
+                                *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                                Please enter a valid email address
+                            </mat-error>
+                            <mat-error *ngIf="emailFormControl.hasError('required')">
+                                Email is <strong>required</strong>
+                            </mat-error>
+                        </mat-form-field>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Mobile No</mat-label>
+                            <input matInput [formControl]="mobileNumber" [pattern]="mobNumberPattern">
+                            <mat-error *ngIf="mobileNumber.hasError('required')">
+                                Mobile Number is <strong>required</strong>
+                            </mat-error>
+                            <mat-error *ngIf="mobileNumber.errors.pattern">
+                                Mobile number not valid.
+                            </mat-error>
+
+                        </mat-form-field>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Address</mat-label>
+                            <textarea matInput [formControl]="address" placeholder="Ex. 504-A xyz soc. city">
+                            </textarea>
+                            <mat-error *ngIf="address.hasError('required')">
+                                Address is <strong>required</strong>
+                            </mat-error>
+                        </mat-form-field>
+                    </td>
+                </tr>
+                <!-- <tr>
+                    <td>
+                        <mat-form-field class="example-full-width">
+                            <mat-radio-group matInput [formControl]="gender" aria-label="Select an option">
+                                <mat-radio-button value="1">Male</mat-radio-button>
+                                <mat-radio-button value="2">Female</mat-radio-button>
+                            </mat-radio-group>
+                        </mat-form-field>
+                    </td>
+                </tr> -->
+            </table>
+        </form>
+    </mat-card-content>
+</mat-card>
