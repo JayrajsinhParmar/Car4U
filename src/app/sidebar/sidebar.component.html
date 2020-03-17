@@ -19,16 +19,20 @@
   </mat-toolbar>
   <mat-drawer-container class="example-container" autosize >
     <mat-drawer #drawer  mode="side">
-            <mat-nav-list *ngFor="let item of sidemenu">
-                <a mat-list-item (click)="drawer.toggle()"[routerLink]="['/',item.routerlink]" routerLinkActive="router-link-active"  ><mat-icon>{{item.icon}}</mat-icon> &nbsp; {{item.name}} </a>
-              <!-- <a mat-list-item (click)="drawer.toggle()" [routerLink]=><mat-icon>{{item.icon}}</mat-icon> &nbsp; {{item.name}}</a> -->
-              <!-- <a mat-list-item  (click)="drawer.toggle()" [routerLink]="'/create-account'"> Create Account </a>
-              <a mat-list-item  (click)="drawer.toggle()" [routerLink]="'/contacts'"> Contacts </a>
-              <a mat-list-item  (click)="drawer.toggle()" [routerLink]="'/create-contact'"> Create Contact </a>
-              <a mat-list-item  (click)="drawer.toggle()" [routerLink]="'/activities'"> Activities </a>
-              <a mat-list-item  (click)="drawer.toggle()" [routerLink]="'/create-activity'"> Create Activity </a>
-              <a mat-list-item (click)="drawer.toggle()" [routerLink]="['']" routerLinkActive="router-link-active"  mat-list-item>Close</a>
-            </mat-nav-list> -->
+            <mat-nav-list >
+              <div *ngIf="adminStatus===true" >
+                <a mat-list-item *ngFor="let item of admin" (click)="drawer.toggle()"[routerLink]="['/',item.routerlink]" routerLinkActive="router-link-active"  ><mat-icon>{{item.icon}}</mat-icon> &nbsp; {{item.name}} </a>
+              </div>  
+              <div *ngIf="carOwnerStatus===true">
+                <a mat-list-item *ngFor="let item of carOwner" (click)="drawer.toggle()"[routerLink]="['/',item.routerlink]" routerLinkActive="router-link-active"  ><mat-icon>{{item.icon}}</mat-icon> &nbsp; {{item.name}} </a>
+              </div > 
+              <div *ngIf="userStatus===true">
+                <a mat-list-item *ngFor="let item of user" (click)="drawer.toggle()"[routerLink]="['/',item.routerlink]" routerLinkActive="router-link-active"  ><mat-icon>{{item.icon}}</mat-icon> &nbsp; {{item.name}} </a>
+              </div>
+              <div *ngIf="employeeStatus===true">  
+                <a mat-list-item *ngFor="let item of employee" (click)="drawer.toggle()"[routerLink]="['/',item.routerlink]" routerLinkActive="router-link-active"  ><mat-icon>{{item.icon}}</mat-icon> &nbsp; {{item.name}} </a>
+              </div>
+            
         </mat-nav-list>
     </mat-drawer>
     <ng-content select=".mainsection"></ng-content>

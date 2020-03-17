@@ -17,6 +17,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatCardModule} from '@angular/material/card';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { AdminUserRequestesComponent } from './admin/admin-user-requestes/admin-user-requestes.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     AppComponent,
     UserRegisterComponent,
     DashboardComponent,
-    SidebarComponent
+    SidebarComponent,
+    AdminUserRequestesComponent
   ],
   imports: [
     BrowserModule,
