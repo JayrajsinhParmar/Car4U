@@ -3,29 +3,33 @@
     // max-width: 500px;
     width: 100%;
   }
-  
-  .example-full-width {
+  mat-radio-group {
     right: 140px;
     width: 250%;
   }
-   
+  mat-radio-button {
+    width: 100%;
+  }
+  mat-label {
+      text-align: left;
+  }
+  .example-full-width {
+    // right: 140px;
+    width: 500px;
+  }
+  
  .mat-card-title{
      text-align: center;
  }
  .mat-card {    
     text-align: -webkit-center;    
-}    
-    
+}      
 .demo-toolbar {    
     display: block;    
     align-items: center;    
     width: 100%;    
 }    
-    
-.mat-radio-button ~ .mat-radio-button {
-    margin-left: 16px;
-  }
-    
+
 body {    
     margin: 0;    
     font-family: Roboto, sans-serif;    

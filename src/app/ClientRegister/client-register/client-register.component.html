@@ -9,15 +9,14 @@
     <mat-card-title>User Registration</mat-card-title>
 
     <mat-card-content>
-        <form #userForm="ngForm" (ngSubmit)="onFormSubmit(userForm)">
+        <form [formGroup]="regiForm" (ngSubmit)="onFormSubmit(regiForm.value)">
             <table>
                 <tr>
                     <td>
                         <mat-form-field class="example-full-width">
                             <mat-label>Name</mat-label>
-                            <input matInput name="userName" #userName="ngModel" [(ngModel)]="user.userName" required
-                                placeholder="Ex. girish">
-                            <mat-error *ngIf="userName.errors.required">
+                            <input matInput f formControlName="userName" placeholder="Ex. girish">
+                            <mat-error *ngIf="!regiForm.get('userName').valid && regiForm.get('userName').touched">
                                 Name is <strong>required</strong>
                             </mat-error>
                         </mat-form-field>
@@ -28,12 +27,11 @@
                     <td>
                         <mat-form-field class="example-full-width">
                             <mat-label>Email</mat-label>
-                            <input matInput name="email" #email="ngModel" [(ngModel)]="user.email" required
-                                placeholder="Ex. pat@example.com">
+                            <input matInput formControlName="email" placeholder="Ex. pat@example.com">
                             <!-- <mat-error *ngIf="email.errors.required">
                                 Please enter a valid email address
                             </mat-error> -->
-                            <mat-error *ngIf="email.errors.required">
+                            <mat-error *ngIf="!regiForm.get('email').valid && regiForm.get('email').touched">
                                 Email is <strong>required</strong>
                             </mat-error>
                         </mat-form-field>
@@ -43,12 +41,12 @@
                     <td>
                         <mat-form-field class="example-full-width">
                             <mat-label>Mobile No</mat-label>
-                            <input matInput name="mobileNumber" #mobileNumber="ngModel" [(ngModel)]="user.mobileNumber"
-                                required placeholder="+91 ">
+                            <input matInput formControlName="mobileNumber" placeholder="+91 ">
                             <!-- <mat-error *ngIf="mobileNumber.hasError('required')">
                                 Mobile Number is <strong>required</strong>
                             </mat-error> -->
-                            <mat-error *ngIf="mobileNumber.errors.required">
+                            <mat-error
+                                *ngIf="!regiForm.get('mobileNumber').valid && regiForm.get('mobileNumber').touched">
                                 Mobile number not valid.
                             </mat-error>
 
@@ -59,30 +57,47 @@
                     <td>
                         <mat-form-field class="example-full-width">
                             <mat-label>Address</mat-label>
-                            <textarea matInput name="address" #address="ngModel" [(ngModel)]="user.address"
-                                placeholder="Ex. 504-A xyz soc. city" required>
+                            <textarea matInput formControlName="address" placeholder="Ex. 504-A xyz soc. city">
                             </textarea>
-                            <mat-error *ngIf="address.errors.required">
+                            <mat-error *ngIf="!regiForm.get('address').valid && regiForm.get('address').touched">
                                 Address is <strong>required</strong>
                             </mat-error>
                         </mat-form-field>
                     </td>
                 </tr>
-                <!-- <tr>
-                    <td>
-                        <mat-form-field class="example-full-width">
-                            <mat-radio-group aria-label="Select an option">
-                                <mat-radio-button matInput name="gender" value="Male" #gender="ngModel"
-                                    [(ngModel)]="user.gender">Male</mat-radio-button>
-                                <mat-radio-button matInput name="gender" value="Female" #gender="ngModel"
-                                    [(ngModel)]="user.gender">Female</mat-radio-button>
-                            </mat-radio-group>
-                        </mat-form-field>
-                    </td>
-                </tr> -->
                 <tr>
                     <td>
-                        <button (click)="someForm.reset()" mat-raised-button color="primary">Submit Form</button>
+
+                        <mat-label>Gender</mat-label>
+                        <mat-radio-group formControlName="gender">
+                            <mat-radio-button value="Male">Male</mat-radio-button>
+                            <mat-radio-button value="Female">Female</mat-radio-button>
+                        </mat-radio-group>
+                        <mat-error>
+                            <span *ngIf="!regiForm.get('gender').valid && regiForm.get('gender').touched">Please
+                                select any gender !!!</span>
+                        </mat-error>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Date of Birth</mat-label>
+                            <input matInput formControlName="dob" [matDatepicker]="picker" placeholder="Date of Birth">
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker touchUi="true" #picker></mat-datepicker>
+                            <mat-error>
+                                <span *ngIf="!regiForm.get('dob').valid && regiForm.get('dob').touched">Please select
+                                    any Date !!!</span>
+                            </mat-error>
+                        </mat-form-field>
+                    </td>
+                </tr>
+                <tr>
+
+                    <td>
+                        <button mat-raised-button color="primary">Submit</button>
                     </td>
                 </tr>
             </table>

@@ -1,43 +1,33 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, Validators, NgForm } from '@angular/forms';
-import { User } from 'src/app/ClientRegister/client-register/user';
+import { FormControl, Validators, FormGroup, FormBuilder, NgForm } from '@angular/forms';
 @Component({
   selector: 'app-client-register',
   templateUrl: './client-register.component.html',
   styleUrls: ['./client-register.component.scss']
 })
-export class ClientRegisterComponent implements OnInit {
-  // emailFormControl = new FormControl('', [
-  //   Validators.required,
-  //   Validators.email,
-  // ]);
-  // userName = new FormControl('', [
-  //   Validators.required,
-  // ]);
-  // mobileNumber = new FormControl('', [
-  //   Validators.required,
-  // ]);
-  // mobNumberPattern = "^((\\+91-?)|0)?[0-9]{10}$";
-  // address = new FormControl('', [
-  //   Validators.required,
-  // ]);
-  // gender = new FormControl('', [
-  //   Validators.required,
-  // ]);
-  constructor() { }
-  user = new User();
-  ngOnInit(): void {
+export class ClientRegisterComponent {
+  regiForm: FormGroup;
+  userName: string = "";
+  mobileNumber: string = "";
+  address: string = "";
+  gender: string = "";
+  email: string = "";
+  dob: Date;
+  constructor(private fb: FormBuilder) {
+    this.regiForm = fb.group({
+      'userName': [null, Validators.required],
+      'mobileNumber': [null, Validators.required],
+      'address': [null, Validators.required],
+      'gender': [null, Validators.required],
+      'email': [null, Validators.required],
+      'dob': [null, Validators.required],
+    });
 
   }
-  // isValidFormSubmitted = false;
-  // onFormSubmit(form: NgForm) {
-  //   this.isValidFormSubmitted = false;
-  //   if (form.invalid) {
-  //     return;
-  //   }
-  //   this.isValidFormSubmitted = true;
-  //   form.resetForm();
-  // }
+  onFormSubmit(form: NgForm) {
+    console.log(form);
+  }
 }
+
 
 
