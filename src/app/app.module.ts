@@ -13,12 +13,13 @@ import { MatListModule } from '@angular/material/list';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ClientRegisterComponent } from './ClientRegister/client-register/client-register.component';
 import { MatRadioModule } from '@angular/material/radio';
-
+import { Component } from '@angular/core';
 
 @NgModule({
   declarations: [

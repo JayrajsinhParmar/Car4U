@@ -1,40 +1,39 @@
-<mat-toolbar color="accent">
+<!-- <mat-toolbar color="accent">
     <span class="demo-toolbar"></span>
 
 
-</mat-toolbar>
+</mat-toolbar> -->
 
 <mat-card>
     <!-- Title of an Card -->
-    <mat-card-title>
-        User Registration
-    </mat-card-title>
+    <mat-card-title>User Registration</mat-card-title>
 
     <mat-card-content>
         <form #userForm="ngForm" (ngSubmit)="onFormSubmit(userForm)">
             <table>
                 <tr>
                     <td>
-                        <mat-form-field class=" example-full-width">
+                        <mat-form-field class="example-full-width">
                             <mat-label>Name</mat-label>
-                            <input matInput [formControl]="userName" placeholder="Ex. girish">
-
-                            <mat-error *ngIf="userName.hasError('required')">
+                            <input matInput name="userName" #userName="ngModel" [(ngModel)]="user.userName" required
+                                placeholder="Ex. girish">
+                            <mat-error *ngIf="userName.errors.required">
                                 Name is <strong>required</strong>
                             </mat-error>
                         </mat-form-field>
                     </td>
                 </tr>
+
                 <tr>
                     <td>
                         <mat-form-field class="example-full-width">
                             <mat-label>Email</mat-label>
-                            <input matInput [formControl]="emailFormControl" placeholder="Ex. pat@example.com">
-                            <mat-error
-                                *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                            <input matInput name="email" #email="ngModel" [(ngModel)]="user.email" required
+                                placeholder="Ex. pat@example.com">
+                            <!-- <mat-error *ngIf="email.errors.required">
                                 Please enter a valid email address
-                            </mat-error>
-                            <mat-error *ngIf="emailFormControl.hasError('required')">
+                            </mat-error> -->
+                            <mat-error *ngIf="email.errors.required">
                                 Email is <strong>required</strong>
                             </mat-error>
                         </mat-form-field>
@@ -44,11 +43,12 @@
                     <td>
                         <mat-form-field class="example-full-width">
                             <mat-label>Mobile No</mat-label>
-                            <input matInput [formControl]="mobileNumber" [pattern]="mobNumberPattern">
-                            <mat-error *ngIf="mobileNumber.hasError('required')">
+                            <input matInput name="mobileNumber" #mobileNumber="ngModel" [(ngModel)]="user.mobileNumber"
+                                required placeholder="+91 ">
+                            <!-- <mat-error *ngIf="mobileNumber.hasError('required')">
                                 Mobile Number is <strong>required</strong>
-                            </mat-error>
-                            <mat-error *ngIf="mobileNumber.errors.pattern">
+                            </mat-error> -->
+                            <mat-error *ngIf="mobileNumber.errors.required">
                                 Mobile number not valid.
                             </mat-error>
 
@@ -59,9 +59,10 @@
                     <td>
                         <mat-form-field class="example-full-width">
                             <mat-label>Address</mat-label>
-                            <textarea matInput [formControl]="address" placeholder="Ex. 504-A xyz soc. city">
+                            <textarea matInput name="address" #address="ngModel" [(ngModel)]="user.address"
+                                placeholder="Ex. 504-A xyz soc. city" required>
                             </textarea>
-                            <mat-error *ngIf="address.hasError('required')">
+                            <mat-error *ngIf="address.errors.required">
                                 Address is <strong>required</strong>
                             </mat-error>
                         </mat-form-field>
@@ -70,13 +71,20 @@
                 <!-- <tr>
                     <td>
                         <mat-form-field class="example-full-width">
-                            <mat-radio-group matInput [formControl]="gender" aria-label="Select an option">
-                                <mat-radio-button value="1">Male</mat-radio-button>
-                                <mat-radio-button value="2">Female</mat-radio-button>
+                            <mat-radio-group aria-label="Select an option">
+                                <mat-radio-button matInput name="gender" value="Male" #gender="ngModel"
+                                    [(ngModel)]="user.gender">Male</mat-radio-button>
+                                <mat-radio-button matInput name="gender" value="Female" #gender="ngModel"
+                                    [(ngModel)]="user.gender">Female</mat-radio-button>
                             </mat-radio-group>
                         </mat-form-field>
                     </td>
                 </tr> -->
+                <tr>
+                    <td>
+                        <button (click)="someForm.reset()" mat-raised-button color="primary">Submit Form</button>
+                    </td>
+                </tr>
             </table>
         </form>
     </mat-card-content>
