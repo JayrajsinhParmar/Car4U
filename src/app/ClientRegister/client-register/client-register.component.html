@@ -1,9 +1,10 @@
-<!-- <mat-toolbar color="accent">
-    <span class="demo-toolbar"></span>
-
-
-</mat-toolbar> -->
-
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <h2>
+            Car4U
+        </h2>
+    </mat-toolbar-row>
+</mat-toolbar>
 <mat-card>
     <!-- Title of an Card -->
     <mat-card-title>User Registration</mat-card-title>
@@ -21,22 +22,38 @@
                             </mat-error>
                         </mat-form-field>
                     </td>
-                </tr>
 
+                </tr>
                 <tr>
                     <td>
                         <mat-form-field class="example-full-width">
-                            <mat-label>Email</mat-label>
-                            <input matInput formControlName="email" placeholder="Ex. pat@example.com">
-                            <!-- <mat-error *ngIf="email.errors.required">
-                                Please enter a valid email address
-                            </mat-error> -->
-                            <mat-error *ngIf="!regiForm.get('email').valid && regiForm.get('email').touched">
-                                Email is <strong>required</strong>
+                            <mat-label>Date of Birth</mat-label>
+                            <input matInput formControlName="dob" [matDatepicker]="picker" placeholder="Date of Birth">
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker touchUi="true" #picker></mat-datepicker>
+                            <mat-error>
+                                <span *ngIf="!regiForm.get('dob').valid && regiForm.get('dob').touched">Please select
+                                    any Date !!!</span>
                             </mat-error>
                         </mat-form-field>
                     </td>
                 </tr>
+                <tr>
+                    <td>
+                        <div class="example-full-width">
+                            <mat-label>Gender</mat-label><br>
+                            <mat-radio-group formControlName="gender"><br>
+                                <mat-radio-button value="Male">Male</mat-radio-button>
+                                <mat-radio-button value="Female">Female</mat-radio-button>
+                            </mat-radio-group>
+                            <mat-error>
+                                <span *ngIf="!regiForm.get('gender').valid && regiForm.get('gender').touched">Please
+                                    select any gender !!!</span>
+                            </mat-error>
+                        </div>
+                    </td>
+                </tr>
+
                 <tr>
                     <td>
                         <mat-form-field class="example-full-width">
@@ -67,29 +84,28 @@
                 </tr>
                 <tr>
                     <td>
-
-                        <mat-label>Gender</mat-label>
-                        <mat-radio-group formControlName="gender">
-                            <mat-radio-button value="Male">Male</mat-radio-button>
-                            <mat-radio-button value="Female">Female</mat-radio-button>
-                        </mat-radio-group>
-                        <mat-error>
-                            <span *ngIf="!regiForm.get('gender').valid && regiForm.get('gender').touched">Please
-                                select any gender !!!</span>
-                        </mat-error>
-
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Email</mat-label>
+                            <input matInput formControlName="email" placeholder="Ex. pat@example.com">
+                            <!-- <mat-error *ngIf="email.errors.required">
+                                Please enter a valid email address
+                            </mat-error> -->
+                            <mat-error *ngIf="!regiForm.get('email').valid && regiForm.get('email').touched">
+                                Email is <strong>required</strong>
+                            </mat-error>
+                        </mat-form-field>
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <mat-form-field class="example-full-width">
-                            <mat-label>Date of Birth</mat-label>
-                            <input matInput formControlName="dob" [matDatepicker]="picker" placeholder="Date of Birth">
-                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                            <mat-datepicker touchUi="true" #picker></mat-datepicker>
-                            <mat-error>
-                                <span *ngIf="!regiForm.get('dob').valid && regiForm.get('dob').touched">Please select
-                                    any Date !!!</span>
+                            <mat-label>Password</mat-label>
+                            <input type="password" matInput formControlName="password" placeholder="***********">
+                            <!-- <mat-error *ngIf="email.errors.required">
+                                Please enter a valid email address
+                            </mat-error> -->
+                            <mat-error *ngIf="!regiForm.get('password').valid && regiForm.get('password').touched">
+                                Password is <strong>required</strong>
                             </mat-error>
                         </mat-form-field>
                     </td>

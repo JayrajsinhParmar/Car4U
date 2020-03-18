@@ -13,6 +13,7 @@ export class ClientRegisterComponent {
   gender: string = "";
   email: string = "";
   dob: Date;
+  password: string = "";
   constructor(private fb: FormBuilder) {
     this.regiForm = fb.group({
       'userName': [null, Validators.required],
@@ -21,6 +22,7 @@ export class ClientRegisterComponent {
       'gender': [null, Validators.required],
       'email': [null, Validators.required],
       'dob': [null, Validators.required],
+      'password': [null, Validators.required],
     });
 
   }
