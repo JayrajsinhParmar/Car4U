@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ClientRegisterComponent } from 'src/app/ClientRegister/client-register/client-register.component';
+import { ClientDashboardComponent } from 'src/app/client-dashboard/client-dashboard.component';
 
 
 const routes: Routes = [
@@ -19,6 +20,10 @@ const routes: Routes = [
     path: 'ClientRegister',
     component: ClientRegisterComponent
   },
+  {
+    path: 'ClientDashboard',
+    component: ClientDashboardComponent
+  }
 ];
 
 @NgModule({

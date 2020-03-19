@@ -1,0 +1,60 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <h2>
+            Car4U
+        </h2>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<div class="mainSection">
+    <div>
+        <h1>Home Page</h1>
+    </div>
+    <mat-card>
+        <mat-card-content><br>
+            <mat-label>
+                <h2>Book Your Ride</h2>
+            </mat-label>
+            <mat-form-field class="example-full-width">
+                <mat-label>PICK-UP LOCATION</mat-label>
+                <mat-select>
+                    <mat-option *ngFor="let location of locations" [value]="location.loc">
+                        {{location.locName}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </mat-card-content>
+        <mat-card-content>
+            <mat-form-field class="example-full-width">
+                <mat-label>PICK-UP DATE</mat-label>
+                <input matInput [matDatepicker]="pickDate">
+                <mat-datepicker-toggle matSuffix [for]="pickDate"></mat-datepicker-toggle>
+                <mat-datepicker #pickDate></mat-datepicker>
+            </mat-form-field>
+        </mat-card-content>
+
+        <mat-card-content>
+            <mat-form-field class="example-full-width">
+                <mat-label>RETURN DATE</mat-label>
+                <input matInput [matDatepicker]="returnDate">
+                <mat-datepicker-toggle matSuffix [for]="returnDate"></mat-datepicker-toggle>
+                <mat-datepicker #returnDate></mat-datepicker>
+            </mat-form-field>
+        </mat-card-content>
+        <mat-card-content>
+            <mat-form-field class="example-full-width">
+                <mat-label>CHOOSE CAR TYPE</mat-label>
+                <mat-select>
+                    <mat-option *ngFor="let cartype of cartypes" [value]="cartype.value">
+                        {{cartype.carTypeName}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <div class="example-full-width">
+                <br>
+                <button mat-raised-button color="primary">Find Cars</button>
+            </div>
+        </mat-card-content>
+
+    </mat-card>
+</div>

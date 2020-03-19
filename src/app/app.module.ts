@@ -22,13 +22,15 @@ import { ClientRegisterComponent } from './ClientRegister/client-register/client
 import { MatRadioModule } from '@angular/material/radio';
 import { Component } from '@angular/core';
 import { MatNativeDateModule } from '@angular/material/core';
+import { ClientDashboardComponent } from './client-dashboard/client-dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserRegisterComponent,
     DashboardComponent,
-    ClientRegisterComponent
+    ClientRegisterComponent,
+    ClientDashboardComponent
   ],
   imports: [
     BrowserModule,
