@@ -1,24 +1,24 @@
-import { UserRegisterComponent } from './UserRegister/user-register/user-register.component';
+import { CommonLoginComponent } from './common-login/common-login.component';
+import { CommonSidebarComponent } from './common-sidebar/common-sidebar.component';
+import { UserRegisterComponent } from './user-register/user-register.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { SidebarComponent } from './sidebar/sidebar.component';
+import { AdminDashboardComponent } from './admin/admin/dashboard/admin-dashboard.component';
 
 
 const routes: Routes = [
   {
     path:'',
-    component :SidebarComponent,
+    component : CommonLoginComponent,
     pathMatch:'full'
   },
   {
-    path:'Register',
-    component:UserRegisterComponent
+  path :'',
+  loadChildren :() => import('./common-sidebar/common-sidebar.module').then(m => m.CommonSidebarModule)
   },
-  {
-    path:'Admin',
-    loadChildren: () => import('./admin/admin/admin.module').then(k => k.AdminModule)
-  }
+  
+  
+  
 ];
 
 @NgModule({
