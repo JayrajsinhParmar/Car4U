@@ -1,7 +1,6 @@
 import { ClientDashboardComponent } from './client-dashboard/client-dashboard.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LogOutComponent } from './log-out/log-out.component';
 
 
 const routes: Routes = [
@@ -33,10 +32,7 @@ const routes: Routes = [
     path:'aboutus',
     loadChildren : () =>import('./aboutus/aboutus.module').then(k=>k.AboutusModule)
   },
-  {
-    path:'logout',
-    component:LogOutComponent
-  }
+
 ];
 
 @NgModule({

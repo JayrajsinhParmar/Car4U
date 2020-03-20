@@ -1,15 +1,5 @@
-import { UpdateStatusModule } from './update-status/update-status.module';
-import { UpdateDocumentModule } from './../client/update-document/update-document.module';
-import { TripsComponent } from './trips/trips.component';
-import { UpdateStatusComponent } from './update-status/update-status.component';
-import { RequestsOfCarComponent } from './requests-of-car/requests-of-car.component';
-import { AddCarComponent } from './add-car/add-car.component';
-import { CarOwnerDashboardComponent } from './car-owner-dashboard/car-owner-dashboard.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { UpdateDocumentComponent } from './update-document/update-document.component';
-import { AboutusComponent } from '../client/aboutus/aboutus.component';
-import { LogOutComponent } from '../client/log-out/log-out.component';
 
 
 const routes: Routes = [
@@ -27,7 +17,7 @@ const routes: Routes = [
   },
   {
     path:'requestsOfCar',
-    loadChildren: () => import('./add-car/add-car.module').then(k=>k.AddCarModule)
+    loadChildren: () => import('./requests-of-car/requests-of-car.module').then(k=>k.RequestsOfCarModule)
   },
   {
     path:'updateDocument',
@@ -45,10 +35,7 @@ const routes: Routes = [
     path:'aboutus',
     loadChildren: () => import('../client/aboutus/aboutus.module').then(k=>k.AboutusModule)
   },
-  {
-    path:'logout',
-    component:LogOutComponent
-  }
+
 ];
 
 @NgModule({

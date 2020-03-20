@@ -6,11 +6,10 @@ import { ClientDashboardComponent } from './client-dashboard/client-dashboard.co
 import { ViewCarComponent } from './view-car/view-car.component';
 import { YourBookingsComponent } from './your-bookings/your-bookings.component';
 import { UpdateDocumentComponent } from './update-document/update-document.component';
-import { LogOutComponent } from './log-out/log-out.component';
 
 
 @NgModule({
-  declarations: [ClientDashboardComponent, ViewCarComponent, YourBookingsComponent, UpdateDocumentComponent, LogOutComponent],
+  declarations: [ClientDashboardComponent, ViewCarComponent, YourBookingsComponent, UpdateDocumentComponent],
   imports: [
     CommonModule,
     ClientRoutingModule

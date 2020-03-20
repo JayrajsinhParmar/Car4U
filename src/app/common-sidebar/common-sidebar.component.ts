@@ -6,10 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./common-sidebar.component.scss']
 })
 export class CommonSidebarComponent implements OnInit {
-  adminStatus=false;
+  adminStatus=true;
   clientStatus=false;
-  employeeStatus=true;
   carOwnerStatus=false;
+  employeeStatus=false;
     admin =[
       {
         'name' :'Dashboard',
@@ -92,7 +92,7 @@ export class CommonSidebarComponent implements OnInit {
       {
         'name' :'Log out',
         'icon':'settings_power',
-        'routerlink':'logout'
+        'routerlink':''
       }
   
       
@@ -131,7 +131,7 @@ export class CommonSidebarComponent implements OnInit {
       {
         'name' :'Log out',
         'icon':'settings_power',
-        'routerlink':'logout'
+        'routerlink':''
       }
     ]
   

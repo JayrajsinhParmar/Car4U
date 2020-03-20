@@ -8,10 +8,10 @@ import { Router } from '@angular/router';
 })
 export class CommonLoginComponent implements OnInit {
   hide=true;
-  admin=false;
+  admin=true;
   client =false;
   carOwner=false;
-  employee=true;
+  employee=false;
   constructor(private navigation: Router) { }
   ngOnInit(): void {
   }
