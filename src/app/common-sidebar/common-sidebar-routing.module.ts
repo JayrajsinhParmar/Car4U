@@ -1,3 +1,4 @@
+import { CarOwnerModule } from './../car-owner/car-owner.module';
 import { AppPage } from './../../../e2e/src/app.po';
 import { AdminModule } from './../admin/admin/admin.module';
 import { AdminDashboardComponent } from '../admin/admin/dashboard/admin-dashboard.component';
@@ -20,7 +21,19 @@ const routes: Routes = [
       {
         path:'Admin',
         loadChildren: () => import('../admin/admin/admin.module').then(k => k.AdminModule)
-      } 
+      },
+      {
+        path:'client',
+        loadChildren :() =>import('../client/client.module').then(k=> k.ClientModule)
+      },
+      {
+        path:'carOwner',
+        loadChildren: ()=>import('../car-owner/car-owner.module').then(k=>CarOwnerModule)
+      },
+      {
+        path:'employee',
+        loadChildren:()=> import('../employee/employee.module').then(k=>k.EmployeeModule)
+      }
     ]
   }
 ];
