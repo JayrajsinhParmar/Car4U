@@ -1,0 +1,35 @@
+<!-- <mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <h1>Cars</h1>
+    </mat-toolbar-row>
+</mat-toolbar> -->
+<body>
+<div class="container text-center">
+    <div class="row">
+        <div class="col-md-4"> </div>
+        <div class="col-md-4">
+            <mat-card class="RegistrationCard">
+                <form class="userLogin">
+                    <mat-card-title color ='primary'>LogIn</mat-card-title>
+                    <mat-form-field class="inputFileds" appearance="outline">
+                        <mat-label>Username</mat-label>
+                        <input matInput>
+                    </mat-form-field>
+                    <br>
+                    <mat-form-field class="inputFileds" appearance="outline">
+                        <mat-label>Password</mat-label>
+                        <input matInput [type]="hide ? 'password' : 'text'">
+                        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                            [attr.aria-pressed]="hide">
+                            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                    </mat-form-field>
+                    <br>
+                    <button class="loginbtn"(click)="login()" mat-flat-button color='primary'>Log In</button>
+                </form>
+                </mat-card>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</div>
+</body>

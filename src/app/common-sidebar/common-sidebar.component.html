@@ -1,0 +1,32 @@
+
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <button mat-icon-button>
+        <mat-icon (click)="drawer.toggle()" >menu</mat-icon>
+      </button>
+      <h1>Cars</h1>
+      <span class="menu-spacer" >user details</span>
+    </mat-toolbar-row>
+  
+  </mat-toolbar>
+  <mat-drawer-container class="example-container" autosize >
+    <mat-drawer #drawer  mode="side">
+            <mat-nav-list >
+              <div *ngIf="!!adminStatus" >
+                <a mat-list-item *ngFor="let item of admin" (click)="drawer.toggle()" [routerLink]="[item.routerlink]" routerLinkActive="router-link-active"  ><mat-icon>{{item.icon}}</mat-icon> &nbsp; {{item.name}} </a>
+              </div>  
+              <div *ngIf="!!carOwnerStatus">
+                <a mat-list-item *ngFor="let item of carOwner" (click)="drawer.toggle()"[routerLink]="[item.routerlink]" routerLinkActive="router-link-active"  ><mat-icon>{{item.icon}}</mat-icon> &nbsp; {{item.name}} </a>
+              </div > 
+              <div *ngIf="!!clientStatus">
+                <a mat-list-item *ngFor="let item of user" (click)="drawer.toggle()"[routerLink]="[item.routerlink]" routerLinkActive="router-link-active"  ><mat-icon>{{item.icon}}</mat-icon> &nbsp; {{item.name}} </a>
+              </div>
+              <div *ngIf="!!employeeStatus">  
+                <a mat-list-item *ngFor="let item of employee" (click)="drawer.toggle()"[routerLink]="[item.routerlink]" routerLinkActive="router-link-active"  ><mat-icon>{{item.icon}}</mat-icon> &nbsp; {{item.name}} </a>
+              </div>
+            
+        </mat-nav-list>
+    </mat-drawer>
+    <!-- <ng-content select=".mainsection" ></ng-content> -->
+    <router-outlet></router-outlet>
+</mat-drawer-container>

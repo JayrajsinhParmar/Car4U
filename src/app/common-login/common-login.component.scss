@@ -1,0 +1,25 @@
+body{
+  background-color:rebeccapurple;
+}
+.RegistrationCard {
+  //   margin-top: 10px;
+  //   margin: 0 auto;
+  //   display: block;
+  background-color: darken($color: lavenderblush, $amount: 0);;
+  position: absolute;
+  margin-top: 30%;
+  box-shadow: 1px 1px 9px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+  width: 400px;
+  // opacity: .9;
+  padding: 29px;
+}
+.inputFileds {
+  width: 300px;
+}
+.loginbtn {
+  display: block;
+  margin: 0 auto;
+}
+.userLogin {
+  margin-top: 20px;
+}
