@@ -9,12 +9,15 @@ import { Router } from '@angular/router';
 export class CommonLoginComponent implements OnInit {
   hide=true;
   admin=true;
-  user =false;
+  client =false;
+  carOwner=false;
+  employee=false;
   constructor(private navigation: Router) { }
   ngOnInit(): void {
   }
 
   login() {
-    this.navigation.navigate(this.user ? ['user'] : (this.admin ? ['Admin']: null) );
+    this.navigation.navigate(this.client ? ['client'] : (this.admin ? ['Admin']: (this.carOwner ? ['carOwner'] : (this.employee ? ['employee'] : null))) );
   }
 }
+  

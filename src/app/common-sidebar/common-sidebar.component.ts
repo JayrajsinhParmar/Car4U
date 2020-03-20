@@ -7,9 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CommonSidebarComponent implements OnInit {
   adminStatus=true;
-  userStatus=false;
-  employeeStatus=false;
+  clientStatus=false;
   carOwnerStatus=false;
+  employeeStatus=false;
     admin =[
       {
         'name' :'Dashboard',
@@ -57,37 +57,37 @@ export class CommonSidebarComponent implements OnInit {
       {
         'name' :'Dashboard',
         'icon':'dashboard',
-        'routerlink':''
+        'routerlink':'dashboard'
       },
       {
         'name' :'Add Car',
         'icon':'add_circle', 
-        'routerlink':''
+        'routerlink':'addCar'
       },
       {
         'name' :'Requestes of Car',
         'icon':'directions_car',
-        'routerlink':''
+        'routerlink':'requestsOfCar'
       },
       {
         'name' :'Update Document',
         'icon':'update',
-        'routerlink':''
+        'routerlink':'updateDocument'
       },
       {
         'name' :'Update Status',
         'icon':'system_update',
-        'routerlink':''
+        'routerlink':'updateStatus'
       },
       {
         'name' :'Trips',
         'icon':'drive_eta',
-        'routerlink':''
+        'routerlink':'trips'
       },
       {
         'name' :'About Us',
         'icon':'work_outline',
-        'routerlink':''
+        'routerlink':'aboutus'
       },
       {
         'name' :'Log out',
@@ -101,32 +101,32 @@ export class CommonSidebarComponent implements OnInit {
       {
         'name' :'Dashboard',
         'icon':'dashboard',
-        'routerlink':''
+        'routerlink':'dashboard'
       },
       {
         'name' :'View Car',
         'icon':'visibility', 
-        'routerlink':''
+        'routerlink':'viewCar'
       },
       {
         'name' :'Your Bookings',
         'icon':'assignment_ind',
-        'routerlink':''
+        'routerlink':'yourBooking'
       },
       {
         'name' :'Update Document',
         'icon':'update',
-        'routerlink':''
+        'routerlink':'updateDocument'
       },
       {
         'name' :'Feedback',
         'icon':' screen_share',
-        'routerlink':''
+        'routerlink':'feedback'
       },
       {
         'name' :'About Us',
         'icon':'work_outline',
-        'routerlink':''
+        'routerlink':'aboutus'
       },
       {
         'name' :'Log out',
@@ -139,28 +139,33 @@ export class CommonSidebarComponent implements OnInit {
       {
         'name' :'Dashboard',
         'icon':'dashboard',
-        'routerlink':''
+        'routerlink':'dashboard'
       },
       {
         'name' :'Car Details',
         'icon':'directions_car', 
-        'routerlink':''
+        'routerlink':'carDetails'
       },
       {
         'name' :'Maintance',
         'icon':'domain',
-        'routerlink':''
+        'routerlink':'maintance'
       },
       {
         'name' :'Car review',
         'icon':'rate_review',
-        'routerlink':''
+        'routerlink':'carReview'
       },
       {
         'name' :'Feedback',
         'icon':'screen_share',
-        'routerlink':''
+        'routerlink':'feedback'
       },
+      {
+        'name':'Log out',
+        'icon': 'settings_power',
+        'routerlink':'',
+      }
     ]
   
   constructor() { }
