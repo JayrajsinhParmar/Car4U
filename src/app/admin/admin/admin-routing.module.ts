@@ -14,6 +14,7 @@ const routes: Routes = [
     path:'',
     component: AdminDashboardComponent,
   },
+ 
   {
     path :'dashboard',
     component:AdminDashboardComponent

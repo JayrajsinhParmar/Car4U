@@ -13,13 +13,13 @@
     <mat-drawer #drawer  mode="side">
             <mat-nav-list >
               <div *ngIf="!!adminStatus" >
-                <a mat-list-item *ngFor="let item of admin" (click)="drawer.toggle()" [routerLink]="[item.routerlink]" routerLinkActive="router-link-active"  ><mat-icon>{{item.icon}}</mat-icon> &nbsp; {{item.name}} </a>
-              </div>  
+                <a mat-list-item *ngFor="let item of admin" (click)="drawer.toggle()" [routerLink]=" ['/Admin' , item.routerlink]" routerLinkActive="router-link-active"  ><mat-icon>{{item.icon}}</mat-icon> &nbsp; {{item.name}} </a>
+              </div>   
               <div *ngIf="!!carOwnerStatus">
                 <a mat-list-item *ngFor="let item of carOwner" (click)="drawer.toggle()"[routerLink]="[item.routerlink]" routerLinkActive="router-link-active"  ><mat-icon>{{item.icon}}</mat-icon> &nbsp; {{item.name}} </a>
               </div > 
               <div *ngIf="!!clientStatus">
-                <a mat-list-item *ngFor="let item of user" (click)="drawer.toggle()"[routerLink]="[item.routerlink]" routerLinkActive="router-link-active"  ><mat-icon>{{item.icon}}</mat-icon> &nbsp; {{item.name}} </a>
+                <a mat-list-item *ngFor="let item of user" (click)="drawer.toggle()"[routerLink]="['/client', item.routerlink]" routerLinkActive="router-link-active"  ><mat-icon>{{item.icon}}</mat-icon> &nbsp; {{item.name}} </a>
               </div>
               <div *ngIf="!!employeeStatus">  
                 <a mat-list-item *ngFor="let item of employee" (click)="drawer.toggle()"[routerLink]="[item.routerlink]" routerLinkActive="router-link-active"  ><mat-icon>{{item.icon}}</mat-icon> &nbsp; {{item.name}} </a>
