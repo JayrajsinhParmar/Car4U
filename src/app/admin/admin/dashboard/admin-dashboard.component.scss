@@ -1,18 +1,21 @@
-.example-card {
-  max-width: 200px;
-}
+// .example-card {
+//   max-width: 200px;
+// }
 
-.example-card {
-  margin-left: 15px;
-}
-.header-image {
-  background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
-  background-size: cover;
-}
+// .example-card {
+//   margin-left: 15px;
+// }
+
 h2 {
   text-align: center;
   color: cornflowerblue;
 }
 a {
   text-decoration: none;
+}
+.mat-card{
+  border-radius: 10px;
+  box-shadow: 0 6px 10px -4px rgba(0,0,0,.15);
+  margin-top: 2%;
+  margin-left: 1%;
 }

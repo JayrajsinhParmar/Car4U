@@ -1,19 +1,20 @@
 
 <mat-toolbar color="primary">
     <mat-toolbar-row>
-      <button mat-icon-button>
-        <mat-icon (click)="drawer.toggle()" >menu</mat-icon>
+      <button mat-icon-button (click)="isExpanded = !isExpanded" >
+        <mat-icon  >menu</mat-icon>
       </button>
       <h1>Cars</h1>
       <span class="profile" >user details</span>
     </mat-toolbar-row>
   
   </mat-toolbar>
-  <mat-drawer-container class="example-container" autosize >
-    <mat-drawer #drawer  mode="side">
+  <mat-drawer-container class="example-container mat-typography" autosize >
+    <mat-drawer #drawer  mode="side"  disableClose="true" opened="true">
             <mat-nav-list >
-              <div *ngIf="!!adminStatus" >
-                <a mat-list-item *ngFor="let item of admin" (click)="drawer.toggle()" [routerLink]=" ['/Admin' , item.routerlink]" routerLinkActive="router-link-active"  ><mat-icon>{{item.icon}}</mat-icon> &nbsp; {{item.name}} </a>
+              <div  *ngIf="!!adminStatus" (mouseenter)="isExpanded = !isExpanded" (mouseleave)="isExpanded = !isExpanded"  >
+                <a mat-list-item *ngFor="let item of admin"  [routerLink]=" ['/Admin' , item.routerlink]" routerLinkActive="router-link-active"  >
+                  <mat-icon >{{item.icon}}</mat-icon> &nbsp; <h4 *ngIf="isExpanded"  style="margin-top: 8%;">{{item.name}}</h4> </a>
               </div>   
               <div *ngIf="!!carOwnerStatus">
                 <a mat-list-item *ngFor="let item of carOwner" (click)="drawer.toggle()"[routerLink]="[item.routerlink]" routerLinkActive="router-link-active"  ><mat-icon>{{item.icon}}</mat-icon> &nbsp; {{item.name}} </a>

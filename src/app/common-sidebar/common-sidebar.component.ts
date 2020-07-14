@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./common-sidebar.component.scss']
 })
 export class CommonSidebarComponent implements OnInit {
+  isExpanded=false;
   adminStatus=true;
   clientStatus=false;
   carOwnerStatus=false;
