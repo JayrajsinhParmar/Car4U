@@ -1,7 +1,21 @@
 import { Component, OnInit } from '@angular/core';
+import { trigger, style, animate, transition } from '@angular/animations';
+
 
 @Component({
   selector: 'app-common-sidebar',
+  animations: [
+    trigger(
+      'enterAnimation', [
+        transition(':enter', [
+          style({transform: '', opacity: 0}),
+          animate('900ms', style({transform: 'translateX(-180)', opacity: 1}))
+        ]),
+       
+      ]
+    )
+  ],
+  
   templateUrl: './common-sidebar.component.html',
   styleUrls: ['./common-sidebar.component.scss']
 })
